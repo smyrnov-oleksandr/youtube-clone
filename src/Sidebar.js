@@ -2,7 +2,6 @@ import React from 'react';
 import SidebarRow from './SidebarRow';
 import {
   ExpandMoreOutlined,
-  ExploreOutlined,
   History,
   HomeSharp,
   OndemandVideo,

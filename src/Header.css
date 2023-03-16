@@ -29,6 +29,9 @@
   flex: 1;
   border: none;
 }
+.header__input > input:focus {
+  outline: none;
+}
 .header__icons {
   display: flex;
   align-items: center;
