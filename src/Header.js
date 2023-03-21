@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
+import { Link } from 'react-router-dom';
 import {
   AppsSharp,
   Notifications,
@@ -11,19 +12,29 @@ import { Avatar } from '@mui/material';
 import './Header.css';
 
 const Header = () => {
+  const [inputSearch, setInputSearch] = useState('');
   return (
     <div className="header">
       <div className="header__left">
         <MenuSharpIcon />
-        <img
-          className="header__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png"
-          alt="youtube"
-        />
+        <Link to="/">
+          <img
+            className="header__logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png"
+            alt="youtube"
+          />
+        </Link>
       </div>
       <div className="header__input">
-        <input type="text" placeholder="Search" />
-        <SearchSharp className="header__inputButton" />
+        <input
+          value={inputSearch}
+          onChange={(e) => setInputSearch(e.target.value)}
+          type="text"
+          placeholder="Search"
+        />
+        <Link to={`/search/${inputSearch}`}>
+          <SearchSharp className="header__inputButton" />
+        </Link>
       </div>
       <div className="header__icons">
         <VideoCallSharp className="header__icon" />
